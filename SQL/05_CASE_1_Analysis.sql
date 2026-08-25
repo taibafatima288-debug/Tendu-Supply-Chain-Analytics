@@ -11,9 +11,10 @@ SELECT
 FROM contracts c
 ORDER BY c.contract_value_inr DESC;
 
+
 Query 2: Profitability Classification
-WITH sales_by_contract AS (
-    SELECT
+WITH sales_by_contract 
+    AS (SELECT
         c.contract_id,
         SUM(s.total_sale_value) AS total_revenue_inr
     FROM sales s
@@ -23,16 +24,11 @@ WITH sales_by_contract AS (
         ON b.inspection_id = qi.inspection_id
     JOIN collection c
         ON qi.collection_id = c.collection_id
-    GROUP BY c.contract_id
-),
-
-expenses_by_contract AS (
-    SELECT
-        contract_id,
+    GROUP BY c.contract_id),expenses_by_contract 
+    AS (SELECT contract_id,
         SUM(amount_inr) AS total_expenses_inr
     FROM expenses
-    GROUP BY contract_id
-)
+    GROUP BY contract_id)
 
 SELECT
     s.contract_id,
@@ -51,23 +47,18 @@ LEFT JOIN expenses_by_contract e
     ON s.contract_id = e.contract_id
 ORDER BY profit_inr DESC;
 
+
 Query 3: Warehouse Capacity Risk
 SELECT
     w.warehouse_id,
     w.warehouse_name,
     w.capacity_kg,
     COALESCE(SUM(i.remaining_quantity_kg), 0) AS current_inventory_kg,
-    ROUND(
-        COALESCE(SUM(i.remaining_quantity_kg), 0) * 100.0
-        / NULLIF(w.capacity_kg, 0),
-        2
-    ) AS capacity_utilization_pct,
+    ROUND(COALESCE(SUM(i.remaining_quantity_kg), 0) * 100.0/ NULLIF(w.capacity_kg, 0),2) AS capacity_utilization_pct,
     CASE
-        WHEN COALESCE(SUM(i.remaining_quantity_kg), 0) * 100.0
-             / NULLIF(w.capacity_kg, 0) >= 90
+        WHEN COALESCE(SUM(i.remaining_quantity_kg), 0) * 100.0 / NULLIF(w.capacity_kg, 0) >= 90
             THEN 'Critical'
-        WHEN COALESCE(SUM(i.remaining_quantity_kg), 0) * 100.0
-             / NULLIF(w.capacity_kg, 0) >= 75
+        WHEN COALESCE(SUM(i.remaining_quantity_kg), 0) * 100.0/ NULLIF(w.capacity_kg, 0) >= 75
             THEN 'High'
         ELSE 'Normal'
     END AS capacity_risk
