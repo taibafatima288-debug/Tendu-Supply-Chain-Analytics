@@ -13,7 +13,7 @@ GROUP BY
 ORDER BY revenue_rank;
 
 
-Query 2: Forest with Highest Total Procurement using CTE
+Query 2: Forest Ranking by Total Procurement using CTE
 WITH forest_procurement 
     AS (SELECT
         f.forest_id,
@@ -43,7 +43,7 @@ FROM sales
 ORDER BY sale_date;
 
 
-Query 4: LAG to Compare Each Sale with Previous Sale
+Query 4: Compare Each Sale with Previous Sale Using LAG
 SELECT
     sale_id,
     sale_date,
