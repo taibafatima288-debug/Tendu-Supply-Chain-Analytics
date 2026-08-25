@@ -5,7 +5,7 @@ SELECT
     f.district,
     f.state,
     COUNT(c.collection_id) AS collection_records,
-    SUM(c.quantity) AS total_quantity
+    SUM(c.collected_quantity_kg) AS total_quantity_kg
 FROM collection c
 INNER JOIN forests f
     ON c.forest_id = f.forest_id
@@ -14,7 +14,7 @@ GROUP BY
     f.forest_name,
     f.district,
     f.state
-ORDER BY total_quantity DESC;
+ORDER BY total_quantity_kg DESC;
 
 
 Query 2: What is the contract value and total expense for each forest?
