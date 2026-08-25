@@ -1,17 +1,19 @@
 Query 1: Buyer Revenue Segmentation
 SELECT
-    buyer_name,
-    buyer_type,
-    SUM(total_sale_value) AS total_revenue_inr,
+    b.buyer_name,
+    b.buyer_type,
+    SUM(s.total_sale_value) AS total_revenue_inr,
     CASE
-        WHEN SUM(total_sale_value) >= 1000000 THEN 'High Value'
-        WHEN SUM(total_sale_value) >= 500000 THEN 'Medium Value'
+        WHEN SUM(s.total_sale_value) >= 1000000 THEN 'High Value'
+        WHEN SUM(s.total_sale_value) >= 500000 THEN 'Medium Value'
         ELSE 'Low Value'
     END AS buyer_segment
-FROM sales
+FROM sales s
+JOIN buyers b
+    ON s.buyer_id = b.buyer_id
 GROUP BY
-    buyer_name,
-    buyer_type
+   b.buyer_name,
+   b.buyer_type
 ORDER BY total_revenue_inr DESC;
 
 
@@ -31,7 +33,7 @@ GROUP BY f.forest_name
 ORDER BY total_procurement_kg DESC;
 
 
-Query 3: Labour Productivity Classification
+Query 3: Labour Productivity Segmentation
 SELECT
     labourer_id,
     labourer_name,
@@ -53,7 +55,7 @@ ORDER BY
     END,years_of_experience DESC;
 
 
-Query 4: Quality Classification
+Query 4: Quality Inspection Segmentation
 SELECT
     inspection_id,
     collection_id,
