@@ -14,6 +14,7 @@ GROUP BY
     buyer_type
 ORDER BY total_revenue_inr DESC;
 
+
 Query 2: Forest Performance Segmentation
 SELECT
     f.forest_name,
@@ -26,9 +27,9 @@ SELECT
 FROM forests f
 JOIN collection c
     ON f.forest_id = c.forest_id
-GROUP BY
-    f.forest_name
+GROUP BY f.forest_name
 ORDER BY total_procurement_kg DESC;
+
 
 Query 3: Labour Productivity Classification
 SELECT
@@ -38,25 +39,19 @@ SELECT
     years_of_experience,
     daily_wage_inr,
     CASE
-        WHEN skill_level = 'Experienced'
-             AND years_of_experience >= 5
-            THEN 'High Productivity'
-        WHEN skill_level = 'Intermediate'
-             OR years_of_experience BETWEEN 2 AND 4
-            THEN 'Medium Productivity'
+        WHEN skill_level = 'Experienced'AND years_of_experience >= 5 THEN 'High Productivity'
+        WHEN skill_level = 'Intermediate'OR years_of_experience BETWEEN 2 AND 4 THEN 'Medium Productivity'
         ELSE 'Low Productivity'
     END AS productivity_classification
 FROM labourers
 WHERE active_status = 'Active'
 ORDER BY
     CASE
-        WHEN skill_level = 'Experienced'
-             AND years_of_experience >= 5 THEN 1
-        WHEN skill_level = 'Intermediate'
-             OR years_of_experience BETWEEN 2 AND 4 THEN 2
+        WHEN skill_level = 'Experienced' AND years_of_experience >= 5 THEN 1
+        WHEN skill_level = 'Intermediate'OR years_of_experience BETWEEN 2 AND 4 THEN 2
         ELSE 3
-    END,
-    years_of_experience DESC;
+    END,years_of_experience DESC;
+
 
 Query 4: Quality Classification
 SELECT
@@ -79,7 +74,3 @@ SELECT
     END AS quality_classification
 FROM quality_inspection
 ORDER BY moisture_percentage ASC;
-
-
-
-
