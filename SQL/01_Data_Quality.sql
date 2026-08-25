@@ -86,6 +86,7 @@ FROM information_schema.columns
 WHERE table_schema = 'public'
 ORDER BY table_name, ordinal_position;
 
+
 Query 3: Database implementation and Record Count Validation
 SELECT
     'forests' AS table_name, COUNT(*) AS records FROM forests
@@ -113,6 +114,7 @@ UNION ALL
 SELECT 'payments', COUNT(*) FROM payments
 UNION ALL
 SELECT 'expenses', COUNT(*) FROM expenses;
+
 
 Query 4: Primary Key and Duplicate Validation
 SELECT 'bundles' AS table_name,
