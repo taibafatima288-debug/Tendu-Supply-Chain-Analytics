@@ -78,12 +78,10 @@ SELECT 'warehouses',
        COUNT(*) - COUNT(DISTINCT warehouse_id)
 FROM warehouses;
 
+
 Query 2: Dats Type and Column Structure Validation
 SELECT
-    table_name,
-    column_name,
-    data_type,
-    is_nullable
+    table_name, column_name, data_type, is_nullable
 FROM information_schema.columns
 WHERE table_schema = 'public'
 ORDER BY table_name, ordinal_position;
@@ -195,6 +193,7 @@ SELECT 'warehouses',
        COUNT(*), COUNT(warehouse_id), COUNT(DISTINCT warehouse_id),
        COUNT(*) - COUNT(DISTINCT warehouse_id)
 FROM warehouses;
+
 
 Query 5: Foreign Key Integrity Check
 SELECT 'bundles → quality_inspection' AS relationship,
@@ -317,6 +316,7 @@ WHERE t.bundle_id IS NOT NULL AND b.bundle_id IS NULL
 
 ORDER BY relationship;
 
+
 Query 6: Transportation Date Integrity Constraint
 CREATE TABLE transportation (
     transport_id VARCHAR(10) PRIMARY KEY,
@@ -328,20 +328,14 @@ CREATE TABLE transportation (
     dispatch_date DATE NOT NULL,
     arrival_date DATE NOT NULL,
     distance_km INTEGER
-        CHECK (distance_km > 0),
-    vehicle_type VARCHAR(30)
-        CHECK (vehicle_type IN ('Mini Truck', 'Pickup Van', 'Medium Truck', 'Heavy Truck')),
-    load_weight_kg DECIMAL(6,2)
-        CHECK (load_weight_kg > 0),
-    transportation_cost_inr DECIMAL(10,2)
-        CHECK (transportation_cost_inr >= 0),
-    fuel_type VARCHAR(20)
-        CHECK (fuel_type IN ('Diesel', 'CNG', 'Petrol')),
-    transport_status VARCHAR(20)
+        CHECK (distance_km > 0), vehicle_type VARCHAR(30)
+        CHECK (vehicle_type IN ('Mini Truck', 'Pickup Van', 'Medium Truck', 'Heavy Truck')), load_weight_kg DECIMAL(6,2)
+        CHECK (load_weight_kg > 0), transportation_cost_inr DECIMAL(10,2)
+        CHECK (transportation_cost_inr >= 0), fuel_type VARCHAR(20)
+        CHECK (fuel_type IN ('Diesel', 'CNG', 'Petrol')),transport_status VARCHAR(20)
         CHECK (transport_status IN ('Delivered', 'In Transit', 'Delayed')),
 
     FOREIGN KEY (bundle_id)
         REFERENCES bundles(bundle_id),
 
-    CHECK (arrival_date >= dispatch_date)
-);
+    CHECK (arrival_date >= dispatch_date));
