@@ -211,27 +211,27 @@ Files:
 
 ## Repository Structure
 
-```text
 Tendu-Supply-Chain-Analytics/
 │
 ├── PowerBI/
-│   ├── Power BI dashboard files
+│   ├── Dashboard_Overview.png
+│   ├── PowerBI_Dashboard.pdf
+│   ├── Tendu_Supply_Chain_Analytics.pbix
 │   └── README.md
 │
 ├── SQL/
-│   ├── Data Quality Analysis/
-│   ├── Basic Business Analysis/
-│   ├── Join Analysis/
-│   ├── Business KPIs/
-│   ├── Case Analysis/
-│   ├── Segmentation Analysis/
-│   ├── Advanced SQL Analysis/
-│   └── SQL README/documentation
+│   ├── 01_Data_Quality.sql
+│   ├── 02_Basic_Business_Analysis.sql
+│   ├── 03_JOIN_Analysis.sql
+│   ├── 04_Business_KPIs.sql
+│   ├── 05_CASE_1_Analysis.sql
+│   ├── 06_Segmentation_Analysis.sql
+│   └── 07_Advanced_SQL_Analysis.sql
 │
 ├── python/
-│   ├── Python analysis notebook
+│   └── Tendu_Leaf_Python_Analysis.ipynb
 │   └── README.md
-│
+│  
 ├── ERD.png
 ├── ERD.json
 ├── Tendu_Supply_Chain_Dataset.xlsx
