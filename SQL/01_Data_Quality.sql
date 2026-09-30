@@ -1,4 +1,5 @@
 --Query 1: Data Quality Validation
+
 SELECT 'bundles' AS table_name,
        COUNT(*) AS total_rows,
        COUNT(bundle_id) AS non_null_ids,
@@ -80,6 +81,7 @@ FROM warehouses;
 
 
 --Query 2: Dats Type and Column Structure Validation
+
 SELECT
     table_name, column_name, data_type, is_nullable
 FROM information_schema.columns
@@ -88,6 +90,7 @@ ORDER BY table_name, ordinal_position;
 
 
 --Query 3: Database implementation and Record Count Validation
+
 SELECT
     'forests' AS table_name, COUNT(*) AS records FROM forests
 UNION ALL
@@ -117,6 +120,7 @@ SELECT 'expenses', COUNT(*) FROM expenses;
 
 
 --Query 4: Primary Key and Duplicate Validation
+
 SELECT 'bundles' AS table_name,
        COUNT(*) AS total_rows,
        COUNT(bundle_id) AS non_null_ids,
@@ -198,6 +202,7 @@ FROM warehouses;
 
 
 --Query 5: Foreign Key Integrity Check
+
 SELECT 'bundles → quality_inspection' AS relationship,
        COUNT(*) AS orphan_records
 FROM bundles b
@@ -320,6 +325,7 @@ ORDER BY relationship;
 
 
 --Query 6: Transportation Date Integrity Constraint
+
 CREATE TABLE transportation (
     transport_id VARCHAR(10) PRIMARY KEY,
     bundle_id VARCHAR(10) NOT NULL,
