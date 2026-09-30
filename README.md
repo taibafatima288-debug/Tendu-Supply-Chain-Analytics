@@ -64,7 +64,10 @@ The project database contains 13 interconnected tables:
 | `payments` | Buyer payment records |
 | `expenses` | Contract-related and operating expenses |
 
-The dataset contains records covering the major stages of the supply chain and is structured to support relational analysis across procurement, operations, finance and sales.
+**File:**
+- `Tendu_Supply_Chain_Dataset.xlsx` — project dataset used for database development, SQL analysis, Python analysis and Power BI reporting.
+
+The dataset was structured and prepared before being imported into PostgreSQL for further analysis.
 
 ## Data Quality & Validation
 
