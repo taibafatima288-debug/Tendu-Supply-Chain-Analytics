@@ -1,4 +1,5 @@
-Query 1: Buyer Revenue Ranking using Window Function
+--Query 1: Buyer Revenue Ranking using Window Function
+
 SELECT
     b.buyer_id,
     b.buyer_name,
@@ -13,7 +14,8 @@ GROUP BY
 ORDER BY revenue_rank;
 
 
-Query 2: Forest Ranking by Total Procurement using CTE
+--Query 2: Forest Ranking by Total Procurement using CTE
+
 WITH forest_procurement 
     AS (SELECT
         f.forest_id,
@@ -34,7 +36,8 @@ FROM forest_procurement
 ORDER BY procurement_rank;
 
 
-Query 3: Running Total Sales Revenue using Window Function
+--Query 3: Running Total Sales Revenue using Window Function
+
 SELECT
     sale_date,
     total_sale_value,
@@ -43,7 +46,8 @@ FROM sales
 ORDER BY sale_date;
 
 
-Query 4: Compare Each Sale with Previous Sale Using LAG
+--Query 4: Compare Each Sale with Previous Sale Using LAG
+
 SELECT
     sale_id,
     sale_date,
@@ -54,7 +58,8 @@ FROM sales
 ORDER BY sale_date, sale_id;
 
 
-Query 5: Warehouse Efficiency using Multiple CTEs
+--Query 5: Warehouse Efficiency using Multiple CTEs
+
 WITH warehouse_inventory AS (
     SELECT
         warehouse_id,
