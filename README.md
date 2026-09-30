@@ -179,11 +179,24 @@ Examples include buyer revenue ranking, forest procurement ranking, cumulative s
 
 ## Python Analysis
 
-The `python` folder contains the Python-based analytical component of the project.
+The `python/` folder contains the Python-based analytical component of the project. It complements the PostgreSQL analysis by providing additional data exploration, analytical processing and business-focused insights.
 
-Python is used to extend the database analysis through data handling, exploration and analytical processing using a data-analysis workflow.
+The Python analysis includes:
+- Data exploration and analytical processing
+- Multi-stage aggregations
+- Conditional classification using analytical logic
+- Buyer revenue ranking
+- Forest procurement ranking
+- Cumulative sales revenue analysis
+- Sales-to-sale comparisons
+- Warehouse efficiency analysis
 
-The Python component complements the PostgreSQL analysis by providing an additional environment for examining patterns and preparing analytical outputs.
+The Python analysis was developed as a complementary analytical layer alongside PostgreSQL and Power BI.
+
+**File:**
+- `Tendu_Leaf_Python_Analysis.ipynb` — Python analysis notebook
+
+For details on the Python workflow, analytical methods and outputs, see [`python/README.md`](python/README.md).
 
 ## Power BI Dashboard
 
