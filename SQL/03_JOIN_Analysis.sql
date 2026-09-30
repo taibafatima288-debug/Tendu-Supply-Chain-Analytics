@@ -1,4 +1,5 @@
-Query 1: How is tendu leaf collection distributed across forests?
+--Query 1: How is tendu leaf collection distributed across forests?
+
 SELECT
     f.forest_id,
     f.forest_name,
@@ -17,7 +18,8 @@ GROUP BY
 ORDER BY total_quantity_kg DESC;
 
 
-Query 2: What is the contract value and total expense for each forest?
+--Query 2: What is the contract value and total expense for each forest?
+
 SELECT
     f.forest_id,
     f.forest_name,
@@ -36,7 +38,8 @@ GROUP BY
 ORDER BY total_expenses_inr DESC;
 
 
-Query 3: What are the total contract value and actual yield for each forest?
+--Query 3: What are the total contract value and actual yield for each forest?
+
 SELECT
     f.forest_id,
     f.forest_name,
@@ -56,7 +59,8 @@ GROUP BY
 ORDER BY total_contract_value_inr DESC;
 
 
-Query 4: Which buyers generate the most sales revenue, and which have outstanding  payments?
+--Query 4: Which buyers generate the most sales revenue, and which have outstanding  payments?
+
 SELECT
     b.buyer_id,
     b.buyer_name,
@@ -78,7 +82,8 @@ GROUP BY
 ORDER BY total_revenue_inr DESC;
 
 
-Query 5: Which forests have the highest accepted quantity and what percentage was rejected?
+--Query 5: Which forests have the highest accepted quantity and what percentage was rejected?
+
 SELECT
     f.forest_id,
     f.forest_name,
@@ -100,7 +105,8 @@ GROUP BY
 ORDER BY rejection_percentage DESC;
 
 
-Query 6: Which forests have the highest expense-to-contract ratio?
+--Query 6: Which forests have the highest expense-to-contract ratio?
+
 SELECT
     f.forest_id,
     f.forest_name,
