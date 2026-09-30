@@ -1,8 +1,12 @@
 # Power BI Dashboard
 
-This folder contains the Power BI dashboard developed as part of the Tendu Leaf Supply Chain Analytics project.
+This folder contains the Power BI dashboard developed as part of the **Tendu Leaf Supply Chain Analytics** project.
 
-The dashboard presents the operational and business analysis developed from the project dataset across procurement, contracts, quality, inventory, transportation, sales and finance.
+The dashboard presents operational and business analysis across procurement, contracts, quality, inventory, transportation, sales and finance.
+
+## Dashboard Preview
+
+![Power BI Executive Overview](Dashboard_Overview.png)
 
 ## Dashboard Pages
 
@@ -51,7 +55,7 @@ The dashboard includes measures and KPIs covering areas such as:
 
 ## Project Workflow
 
-The Power BI dashboard is the reporting and visualisation stage of the overall analytics project.
+The Power BI dashboard represents the reporting and visualisation stage of the overall analytics project.
 
 **Excel → ERD & Database Design → PostgreSQL → SQL Analysis → Python Analysis → Power BI**
 
@@ -65,11 +69,11 @@ The data was prepared and structured before being analysed using SQL and Python.
 - Python
 - Power BI
 
-## Power BI File
+## Project Files
 
-The main dashboard file is:
-
-`Tendu_Supply_Chain_Analytics.pbix`
+- **Dashboard_Overview.png** — Preview of the Power BI dashboard
+- **PowerBI_Dashboard.pdf** — Complete five-page dashboard export
+- **Tendu_Supply_Chain_Analytics.pbix** — Power BI project file
 
 ## Project Context
 
