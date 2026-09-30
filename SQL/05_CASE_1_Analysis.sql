@@ -1,4 +1,5 @@
-Query 1: Contract Performance Classification
+--Query 1: Contract Performance Classification
+
 SELECT
     c.contract_id,
     c.forest_id,
@@ -12,7 +13,8 @@ FROM contracts c
 ORDER BY c.contract_value_inr DESC;
 
 
-Query 2: Profitability Classification
+--Query 2: Profitability Classification
+
 WITH sales_by_contract 
     AS (SELECT
         c.contract_id,
@@ -48,7 +50,8 @@ LEFT JOIN expenses_by_contract e
 ORDER BY profit_inr DESC;
 
 
-Query 3: Warehouse Capacity Risk
+--Query 3: Warehouse Capacity Risk
+
 SELECT
     w.warehouse_id,
     w.warehouse_name,
