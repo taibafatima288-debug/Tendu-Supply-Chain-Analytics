@@ -1,4 +1,5 @@
-Query 1: Buyer Revenue Segmentation
+--Query 1: Buyer Revenue Segmentation
+
 SELECT
     b.buyer_name,
     b.buyer_type,
@@ -17,7 +18,8 @@ GROUP BY
 ORDER BY total_revenue_inr DESC;
 
 
-Query 2: Forest Performance Segmentation
+--Query 2: Forest Performance Segmentation
+
 SELECT
     f.forest_name,
     SUM(c.collected_quantity_kg) AS total_procurement_kg,
@@ -33,7 +35,8 @@ GROUP BY f.forest_name
 ORDER BY total_procurement_kg DESC;
 
 
-Query 3: Labour Productivity Segmentation
+--Query 3: Labour Productivity Segmentation
+
 SELECT
     labourer_id,
     labourer_name,
@@ -55,7 +58,8 @@ ORDER BY
     END,years_of_experience DESC;
 
 
-Query 4: Quality Inspection Segmentation
+--Query 4: Quality Inspection Segmentation
+
 SELECT
     inspection_id,
     collection_id,
