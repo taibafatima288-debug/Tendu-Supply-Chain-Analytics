@@ -1,4 +1,5 @@
-Query 1: How does procurement vary over time?
+--Query 1: How does procurement vary over time?
+
 SELECT
     DATE_TRUNC('month', collection_date)::date AS month,
     SUM(collected_quantity_kg) AS procurement_kg,
@@ -8,7 +9,8 @@ GROUP BY 1
 ORDER BY 1;
 
 
-Query 2: How much tendu leaf was collected?
+--Query 2: How much tendu leaf was collected?
+
 SELECT
     COUNT(*) AS total_collection_records,
     SUM(collected_quantity_kg) AS total_quantity_kg,
@@ -16,7 +18,8 @@ SELECT
 FROM collection;
 
 
-Query 3: Which forests contribute the most to total leaf procurement?
+--Query 3: Which forests contribute the most to total leaf procurement?
+
 SELECT
     f.forest_id,
     f.forest_name,
@@ -29,7 +32,8 @@ GROUP BY f.forest_id, f.forest_name
 ORDER BY total_procurement_kg DESC;
 
 
-Query 4:  What are the major expense categories and how do they change over time?
+--Query 4:  What are the major expense categories and how do they change over time?
+
 SELECT
     DATE_TRUNC('month', expense_date)::date AS month,expense_category,
     SUM(amount_inr) AS total_expense_inr
@@ -40,7 +44,8 @@ ORDER BY
     1,total_expense_inr DESC;
 
 
-Query 5: Which forests generate the highest and lowest estimated operating profit?
+--Query 5: Which forests generate the highest and lowest estimated operating profit?
+
 WITH forest_revenue AS (SELECT c.forest_id, SUM(s.total_sale_value) AS revenue_inr
     FROM sales s
     JOIN bundles b
@@ -71,7 +76,8 @@ LEFT JOIN forest_expense e
 ORDER BY operating_profit_inr DESC;
 
 
-Query 6: How do selling prices and revenue vary by leaf grade?
+--Query 6: How do selling prices and revenue vary by leaf grade?
+
 SELECT
     leaf_grade,
     SUM(quantity_sold_kg) AS quantity_sold_kg,
@@ -82,7 +88,8 @@ GROUP BY leaf_grade
 ORDER BY leaf_grade;
 
 
-Query 7: What are the major monthly sales trends?
+--Query 7: What are the major monthly sales trends?
+
 SELECT
     DATE_TRUNC('month', sale_date)::date AS month,
     SUM(quantity_sold_kg) AS quantity_sold_kg,
