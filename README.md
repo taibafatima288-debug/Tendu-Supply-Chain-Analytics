@@ -229,10 +229,11 @@ Tendu-Supply-Chain-Analytics/
 │   └── 07_Advanced_SQL_Analysis.sql
 │
 ├── python/
-│   └── Tendu_Leaf_Python_Analysis.ipynb
+│   ├── Tendu_Leaf_Python_Analysis.ipynb
 │   └── README.md
-│  
+│
 ├── ERD.png
 ├── ERD.json
 ├── Tendu_Supply_Chain_Dataset.xlsx
+└── README.md
 └── README.md
