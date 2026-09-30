@@ -182,7 +182,7 @@ Examples include buyer revenue ranking, forest procurement ranking, cumulative s
 
 ## Python Analysis
 
-The `python/` folder contains the Python-based analytical component of the project. It complements the PostgreSQL analysis by providing additional data exploration, analytical processing and business-focused insights.
+The [python/](python) folder contains the Python-based analytical component of the project. It complements the PostgreSQL analysis by providing additional data exploration, analytical processing and business-focused insights.
 
 The Python analysis includes:
 - Data exploration and analytical processing
@@ -197,7 +197,7 @@ The Python analysis includes:
 The Python analysis was developed as a complementary analytical layer alongside PostgreSQL and Power BI.
 
 **File:**
-- `Tendu_Leaf_Python_Analysis.ipynb` — Python analysis notebook
+- [`Tendu_Leaf_Python_Analysis.ipynb`](Tendu_Leaf_Python_Analysis.ipynb) — Python analysis notebook
 
 For details on the Python workflow, analytical methods and outputs, see [`python/README.md`](python/README.md).
 
@@ -216,14 +216,22 @@ The dashboard converts the underlying supply chain data into visual reports cove
 
 The dashboard is designed to allow users to explore supply chain performance through interactive visualisations and KPIs.
 
+### Dashboard Files
+
+- [Dashboard Overview](PowerBI/Dashboard_Overview.png) — preview of the executive dashboard
+- [Power BI Dashboard PDF](PowerBI/PowerBI_Dashboard.pdf) — exported dashboard report
+- [Power BI Dashboard File](PowerBI/Tendu_Supply_Chain_Analytics.pbix) — Power BI project file
+
+For details on the dashboard pages, KPIs and reporting workflow, see [`PowerBI/README.md`](PowerBI/README.md).
+
 ## Data Model
 
 An Entity Relationship Diagram (ERD) is included in the root directory to illustrate the relationships between the project's 13 database tables.
 
 Files:
 
-- `ERD.png` – Visual ER diagram
-- `ERD.json` – ER diagram structure
+- [ERD.png](ERD.png) – Visual ER diagram
+- [ERD.json](ERD.json) – ER diagram structure
 
 ## Repository Structure
 
