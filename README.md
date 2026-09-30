@@ -211,6 +211,7 @@ Files:
 
 ## Repository Structure
 
+```text
 Tendu-Supply-Chain-Analytics/
 │
 ├── PowerBI/
@@ -236,4 +237,4 @@ Tendu-Supply-Chain-Analytics/
 ├── ERD.json
 ├── Tendu_Supply_Chain_Dataset.xlsx
 └── README.md
-└── README.md
+```
