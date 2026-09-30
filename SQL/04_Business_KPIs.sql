@@ -1,4 +1,5 @@
-Query 1: Average Procurement Cost per Kg
+--Query 1: Average Procurement Cost per Kg
+
 SELECT
     ROUND(SUM(e.amount_inr) / NULLIF(SUM(c.collected_quantity_kg), 0),2) AS average_procurement_cost_per_kg
 FROM expenses e
@@ -7,20 +8,23 @@ CROSS JOIN
     FROM collection) c;
 
 
-Query 2: Average Selling Price per Kg
+--Query 2: Average Selling Price per Kg
+
 SELECT
     ROUND(SUM(total_sale_value) / NULLIF(SUM(quantity_sold_kg), 0),2) AS average_selling_price_per_kg
 FROM sales;
 
 
-Query 3: Collection Acceptance Rate
+--Query 3: Collection Acceptance Rate
+
 SELECT
     ROUND((SUM(accepted_quantity_kg)::numeric/ NULLIF(SUM(accepted_quantity_kg) + SUM(rejected_quantity_kg), 0)) * 100,2) 
     AS collection_acceptance_rate_percentage
 FROM quality_inspection;
 
 
-Query 4: Forest-Level Revenue & Operating Profit Analysis
+--Query 4: Forest-Level Revenue & Operating Profit Analysis
+
 WITH forest_revenue AS 
     (SELECT c.forest_id,SUM(s.total_sale_value) AS revenue_inr
     FROM sales s
@@ -54,7 +58,8 @@ LEFT JOIN forest_expense e
 ORDER BY operating_profit_inr DESC;
 
 
-Query 5: Outstanding Receivables
+--Query 5: Outstanding Receivables
+
 SELECT
     ROUND(SUM(s.total_sale_value)- COALESCE(SUM(p.amount_paid_inr), 0),2) AS outstanding_receivables_inr
 FROM sales s
@@ -62,7 +67,8 @@ LEFT JOIN payments p
     ON s.sale_id = p.sale_id;
 
 
-Query 6: Profit Margin
+--Query 6: Profit Margin
+
 WITH totals AS 
     (SELECT
         (SELECT SUM(total_sale_value) FROM sales) AS total_revenue,
@@ -72,7 +78,8 @@ SELECT
 FROM totals;
 
 
-Query 7: Buyer Sales & Payment Performance Analysis
+--Query 7: Buyer Sales & Payment Performance Analysis
+
 SELECT
     b.buyer_id,
     b.buyer_name,
