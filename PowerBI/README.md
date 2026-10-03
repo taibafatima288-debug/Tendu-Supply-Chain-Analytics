@@ -4,7 +4,7 @@ This folder contains the Power BI dashboard developed as part of the **Tendu Lea
 
 The dashboard presents operational and business analysis across procurement, contracts, quality, inventory, transportation, sales and finance.
 
-## Dashboard Preview
+## Dashboard Overview
 
 ![Power BI Executive Overview](Dashboard_Overview.png)
 
@@ -71,9 +71,8 @@ The data was prepared and structured before being analysed using SQL and Python.
 
 ## Project Files
 
-- **Dashboard_Overview.png** — Preview of the Power BI dashboard
-- **PowerBI_Dashboard.pdf** — Complete five-page dashboard export
-- **Tendu_Supply_Chain_Analytics.pbix** — Power BI project file
+- [Dashboard_Overview.png](Dashboard_Overview.png) — Complete five-page dashboard overview
+- [Tendu_Supply_Chain_Analytics.pbix](Tendu_Supply_Chain_Analytics.pbix) — Power BI project file
 
 ## Project Context
 
