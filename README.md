@@ -239,7 +239,6 @@ Tendu-Supply-Chain-Analytics/
 │
 ├── PowerBI/
 │   ├── Dashboard_Overview.png
-│   ├── PowerBI_Dashboard.pdf
 │   ├── Tendu_Supply_Chain_Analytics.pbix
 │   └── README.md
 │
