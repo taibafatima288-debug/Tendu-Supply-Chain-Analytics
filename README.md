@@ -218,8 +218,7 @@ The dashboard is designed to allow users to explore supply chain performance thr
 
 ### Dashboard Files
 
-- [Dashboard Overview](PowerBI/Dashboard_Overview.png) — preview of the executive dashboard
-- [Power BI Dashboard PDF](PowerBI/PowerBI_Dashboard.pdf) — exported dashboard report
+- [Dashboard Overview](PowerBI/Dashboard_Overview.png) — Complete five-page overview
 - [Power BI Dashboard File](PowerBI/Tendu_Supply_Chain_Analytics.pbix) — Power BI project file
 
 For details on the dashboard pages, KPIs and reporting workflow, see [`PowerBI/README.md`](PowerBI/README.md).
